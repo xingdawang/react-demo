@@ -6,7 +6,8 @@ import MenuItem from 'material-ui/MenuItem';
 // React router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // Custom component
-import Options from './options'
+// import OptionsForm from './options-form'
+import OptionsFormSelector from '../containers/options-form-selector'
 import Feedback from './feedback'
 import Results from './results'
 import NotFound from './not-found'
@@ -47,7 +48,7 @@ class App extends Component {
 				{/* Router to define the component and url mapping */}
 				<Router>
 					<Switch>
-						<Route path = '/' exact component = { Options } />
+						<Route path = '/' exact component = { OptionsFormSelector } />
 						<Route path = '/feedback' component = { Feedback } />
 						<Route path = '/results' component = { Results } />
 						<Route component = { NotFound } />
