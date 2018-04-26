@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import OptionsForm from '../components/options-form.js'
 // import redux libraries
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -13,6 +12,18 @@ import RaisedButton from 'material-ui/RaisedButton'
 
 class OptionsFormSelector extends Component {
 
+	componentDidUpdate() {
+		// Get the interest status of a category.
+		const interest = this.packageState("Theory")
+		// If the page is fully loaded, and the state is empty, update interest vote (this.props.interestStatus) through redux.
+		if(this.props.allInterestsQuery.loading !== true && this.state === null) {
+			this.props.addInterestVoteByOne(interest)
+			this.setState({"interest": this.props.allInterestsQuery.allInterests})
+			// console.log("this state",this.props.allInterestsQuery.loading )
+			// console.log('in componentDidMount funciton', this.props.allInterestsQuery.loading)
+		}
+		
+	}
 
 	render() {
 
@@ -37,14 +48,7 @@ class OptionsFormSelector extends Component {
 				<RaisedButton
 					label="Theory"
 					primary={true}
-					onClick={ () => {
-							// Get the interest status of a category.
-							const interest = this.packageState("Theory")
-							// Update interest vote (this.props.interestStatus) through redux.
-							this.props.addInterestVoteByOne(interest)
-							// Update GraphCool Interest number
-							this.updateInterestNumber(this.props.interestStatus)
-					}}
+					onClick={ this.updateInterestNumber }
 				/>
 				<RaisedButton
 					label="Practise"
@@ -79,13 +83,11 @@ class OptionsFormSelector extends Component {
 	}
 
 	// Update GraphCool with new status
-	updateInterestNumber = async (interest) => {
-		// console.log('this props2', this.props.interestStatus)
-		console.log('interest', interest)
-		// if(this.props.interestStatus !== null) {
-		// 	await this.props.updateInterestMutation({variables: interest.number})
-		// }
-		// await this.props.updateInterestMutation({variables: this.props.interestStatus.number})
+	updateInterestNumber = async () => {
+		// const  current_interest  = this.props.interestStatus
+		console.log('interest', this.props.interestStatus)
+		console.log('state', this.state)
+		// await this.props.updateInterestMutation({variables: this.props.interestStatus})
 	}
 }
 
@@ -127,7 +129,7 @@ const ListAllInterestsQuery = graphql(ALL_INTERESTS_QUERY, {
 // `
 
 // // Mutate operation for GraphCool to update interest
-// const updateInterestMutation = graphql(UPDATE_INTEREST_MUTATION, {
+// const UpdateInterestMutation = graphql(UPDATE_INTEREST_MUTATION, {
 // 	name: 'updateInterestMutation'
 // })(OptionsFormSelector)
 
