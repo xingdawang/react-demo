@@ -1,6 +1,6 @@
 export const optionSelector = (options) => {
 	return {
-		type: "SELECT_OPTION",
+		type: "GET_INTEREST",
 		payload: options
 	}
 }

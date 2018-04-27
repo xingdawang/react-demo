@@ -6,9 +6,8 @@ import MenuItem from 'material-ui/MenuItem';
 // React router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // Custom component
-// import OptionsForm from './options-form'
 import OptionsFormSelector from '../containers/options-form-selector'
-import Feedback from './feedback'
+import GiveFeedback from '../containers/give-feedback'
 import Results from './results'
 import NotFound from './not-found'
 
@@ -40,16 +39,15 @@ class App extends Component {
 					open={this.state.open}
 					onRequestChange={(open) => this.setState({open})}
 				>
-					<AppBar title = "Home"/>
-					<MenuItem href = "feedback" >Give Feedback</MenuItem>
+					<AppBar title = "Menu"/>
+					<MenuItem href = "/" >Give Feedback</MenuItem>
 					<MenuItem href = "results" >See Results</MenuItem>
 				</Drawer>
 
 				{/* Router to define the component and url mapping */}
 				<Router>
 					<Switch>
-						<Route path = '/' exact component = { OptionsFormSelector } />
-						<Route path = '/feedback' component = { Feedback } />
+						<Route path = '/' exact component = { GiveFeedback } />
 						<Route path = '/results' component = { Results } />
 						<Route component = { NotFound } />
 					</Switch>
