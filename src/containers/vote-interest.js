@@ -75,17 +75,19 @@ class VoteInterest extends Component {
 	// Callback event to trigger GraphCool.
 	voteInterest = async (choice) => {
 		await this.props.createInterestMutation({variables: {choice}})
+		// console.log("in voteInterest", this.props)
 	}
 }
 
-// Funcion placeholder.
+// Redux method to retrieve interest and project properties.
 const mapStateToProps = (state) => {
 	return {
-		interest: state.interestChoice
+		interest: state.interestChoice,
+		project: state.projectChoice
 	}
 }
 
-// GraphQL to take choice as parameter and create Interest data.
+// GraphQL to take choice as parameter and create Interest.
 const CREATE_INTEREST_MUTATION = gql`
 	mutation CreateInterestMutation($choice: String!) {
 		createInterest(name: $choice) {
@@ -93,7 +95,8 @@ const CREATE_INTEREST_MUTATION = gql`
 		}
 	}
 `
-// Bind GraphQL to current class.
+
+// Bind GraphQL to current class to create Interest.
 const CreateMutation = graphql(CREATE_INTEREST_MUTATION, {
 	name: 'createInterestMutation'
 })(VoteInterest)

@@ -12,16 +12,9 @@ export const clearOption = (options) => {
 	}
 }
 
-export const selectGallery = (options) => {
+export const selectProject = (options) => {
 	return {
-		type: "SELECT_GALLERY",
-		payload: options
-	}
-}
-
-export const selectHealthCalculator = (options) => {
-	return {
-		type: "SELECT_HEALTH_CALCULATOR",
+		type: "SELECT_PROJECT",
 		payload: options
 	}
 }

@@ -6,7 +6,6 @@ import MenuItem from 'material-ui/MenuItem';
 // React router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // Custom component
-import OptionsFormSelector from '../containers/options-form-selector'
 import GiveFeedback from '../containers/give-feedback'
 import Results from './results'
 import NotFound from './not-found'
