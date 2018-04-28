@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 
-class TheoryDetails extends Component {
+class PracticeIntroduction extends Component {
 	render() {
 		return (
 			<div>
-				<h2>Theory</h2>
+				<h2>Practice</h2>
 				<ul>
-					<li>GraphQL</li>
+					<li>ES6</li>
 						<p>description description</p>
 						<p>description description</p>
-					<li>Redux</li>
+					<li>Gallery</li>
+						<p>description description</p>
+						<p>description description</p>
+					<li>Health Calculator</li>
 						<p>description description</p>
 						<p>description description</p>
 				</ul>
@@ -18,4 +21,4 @@ class TheoryDetails extends Component {
 	}
 }
 
-export default TheoryDetails
+export default PracticeIntroduction

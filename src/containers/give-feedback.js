@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 
-// Material UI Component
+// Material UI Component.
 import RaisedButton from 'material-ui/RaisedButton'
 
-// Import custom component
-import TheoryDetails from '../components/theory-details'
-import PracticeDetails from '../components/practice-details'
-
-// Import redux
+// Import redux.
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-// Import action
+// Import action.
 import { optionSelector } from '../actions'
+
+// Import custom component.
+import TheoryIntroduction from '../components/theory-introduction'
+import PracticeIntroduction from '../components/practice-introduction'
+import VoteInterest from './vote-interest'
 
 class GiveFeedback extends Component {
 
@@ -20,47 +21,41 @@ class GiveFeedback extends Component {
 		if(this.props.currentChoice === null) {
 			return (
 				<div>
-					<TheoryDetails />
+					<TheoryIntroduction />
 					<RaisedButton
 						label="Theory"
 						primary={true}
 						onClick={ () => this.showSurface("theory") }
 					/>
-					<PracticeDetails />
+					<PracticeIntroduction />
 					<RaisedButton
 						label="Practice"
 						secondary={true}
 						onClick={ () => this.showSurface("practice") }
 					/>
-					{ console.log('props current surface: ', this.props.currentChoice) }
 				</div>
-			)
-		} else if(this.props.currentChoice.currentSurface === 'theory') {
-			return (
-				<p>
-					this is theory page
-				</p>
 			)
 		} else {
 			return (
-				<div>
-					this is practice page
-				</div>
+				<VoteInterest />
 			)
 		}
 	}
 
+	// Setup surface according to the selected interest for redux action.
 	showSurface = (interest) => (
 		this.props.selectInterest({"currentSurface": interest})
 	)
 }
 
+// Get user selected interest state.
 const mapStateToProps = (state) => {
 	return {
 		currentChoice: state.interestChoice
 	}
 }
 
+// Setup user selected state.
 const matchDispatchToProps = (dispatch) => {
 	return bindActionCreators({
 		selectInterest: optionSelector
