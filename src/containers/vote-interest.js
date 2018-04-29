@@ -7,12 +7,8 @@ import RaisedButton from 'material-ui/RaisedButton'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-// Import action.
-import { clearOption } from '../actions'
-
 // Import redux.
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 // Import custom component.
 import VoteProjects from './vote-projects'

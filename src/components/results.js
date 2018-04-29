@@ -1,22 +1,70 @@
 import React, { Component } from 'react'
 
-// import graphql
+// Import graphql.
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+
+// Import Reat Google Charts.
+import { Chart } from 'react-google-charts'
 
 class Results extends Component {
 
 	render() {
 		if(this.props.allPostQuery.loading) {
 			return (
-				<h1>Loading from {process.env.REACT_APP_GRAPHQL_ENDPOINT}</h1>
+				<h1>Loading</h1>
 			)
 		}
 
-		console.log(this.getProjectNumber())
-
+		const interest = this.getInterestNumber()
+		const project = this.getProjectNumber()
 		return (
-			<h1>This is results page.</h1>
+			<div>
+				<h1>Results</h1>
+				<Chart
+					chartType="PieChart"
+					data={[
+						['Label', 'Value'],
+						[`Theory (${interest.theory} voted)`, Number(interest.theory)],
+						[`Practice (${interest.practice} voted)`, Number(interest.practice)]
+					]}
+					options = {{
+						title: "Theory vs Practice",
+						is3D: true,
+						colors: ['#1fbcd3', '#f4a442']
+					}}
+					graph_id="PieChartGraph"
+					width="100%"
+					height="300px"
+					legend_toggle
+				/>
+				<Chart
+					chartType="ColumnChart"
+					data = {[
+						['Label', 'Voted'],
+						[`Gallery (${project.gallery} voted)`, Number(project.gallery)],
+						[`Health Calculator (${project.healthCalculator} voted)`, Number(project.healthCalculator)]
+					]}
+					options={{
+						title: "Gallery & Health Calculator",
+						bar: {groupWidth: "30%"},
+						colors: ['#1fbcd3'],
+						hAxis: {
+							title: "Gallery & Health Calculator"
+						},
+						vAxis: {
+							title: "Voted Number",
+							minValue: 0,
+							viewWindow: { min: 0 },
+							format: '0'
+						}
+					}}
+					graph_id="ColumnChartGraph"
+					width="100%"
+					height="300px"
+					legend_toggle
+				/>
+			</div>
 		)
 	}
 
