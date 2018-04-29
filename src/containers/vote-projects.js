@@ -39,35 +39,33 @@ class VoteProjects extends Component {
 				/>
 				<Checkbox
 					label="Gallery"
-					onCheck={ this.checkGallery }
+					onCheck={ () => this.selectProject("gallery") }
 				/>
 				<Checkbox
 					label="Health Calculator"
-					onCheck={ this.checkHealthCalculator }
+					onCheck={ () => this.selectProject("healthCalculator") }
 				/>
-				{console.log("props", this.props.project)}
 			</div>
 		)
 	}
 
-	// Toggle current gallery state.
-	checkGallery = () => {
-		this.setState((oldState) => {
-			return({
-				gallery: !oldState.gallery,
-				healthCalculator: oldState.healthCalculator
+	// Toggle project status.
+	selectProject = (project) => {
+		if(project === "gallery") {
+			this.setState((oldState) => {
+				return({
+					gallery: !oldState.gallery,
+					healthCalculator: oldState.healthCalculator
+				})
 			})
-		})
-	}
-
-	// Toggle current health calculator state.
-	checkHealthCalculator = () => {
-		this.setState((oldState) =>{
-			return({
-				gallery: oldState.gallery,
-				healthCalculator: !oldState.healthCalculator
+		} else if(project === "healthCalculator"){
+			this.setState((oldState) =>{
+				return({
+					gallery: oldState.gallery,
+					healthCalculator: !oldState.healthCalculator
+				})
 			})
-		})
+		}
 	}
 
 	// State wrapper to return gallery and health calculator state.
