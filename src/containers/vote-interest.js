@@ -28,9 +28,7 @@ class VoteInterest extends Component {
 					label="Vote"
 					primary={true}
 					disabled = {this.props.interest.votedStatus}
-					onClick={ 
-						() => { this.voteInterest(this.props.interest.currentSurface) }
-					}
+					onClick={ () => this.voteInterest(this.props.interest.currentSurface) }
 				/>
 				<RaisedButton
 					label="Back"
