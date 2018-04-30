@@ -5,6 +5,13 @@ export const optionSelector = (options) => {
 	}
 }
 
+export const interestSelected = (options) => {
+	return {
+		type: "INTEREST_SELECTED",
+		payload: options
+	}
+}
+
 export const selectProject = (options) => {
 	return {
 		type: "SELECT_PROJECT",

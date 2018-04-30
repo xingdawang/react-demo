@@ -9,6 +9,10 @@ import gql from 'graphql-tag'
 
 // Import redux.
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+// Import actions.
+import { interestSelected } from '../actions'
 
 // Import custom component.
 import VoteProjects from './vote-projects'
@@ -23,20 +27,30 @@ class VoteInterest extends Component {
 				<RaisedButton
 					label="Vote"
 					primary={true}
-					onClick={ () => this.voteInterest(this.props.interest.currentSurface) }
+					disabled = {this.props.interest.votedStatus}
+					onClick={ 
+						() => { this.voteInterest(this.props.interest.currentSurface) }
+					}
 				/>
 				<RaisedButton
 					label="Back"
 					secondary={true}
 					href='/'
 				/>
+				{this.props.interest.votedStatus ?
+					<div>
+						<h2>Fancy about others opinion?</h2>
+						<RaisedButton label="Results" primary={true} href='/results' />
+					</div>:
+					""
+				}
+
 			</div>
 		)
 	}
 
 	// Load different content according to the interest.
 	loadContent = (choice) => {
-
 		if(choice === "theory") {
 			return (
 				<ul>
@@ -84,6 +98,8 @@ class VoteInterest extends Component {
 			healthCalculator = this.props.project.healthCalculator ? "healthCalculator" : ""
 		}
 		await this.props.createCombinationMutation({variables: {choice, gallery, healthCalculator}})
+		// Set vote button status (VotedStatus) to be 'true' after each click.
+		this.props.setVoteState()
 	}
 }
 
@@ -93,6 +109,13 @@ const mapStateToProps = (state) => {
 		interest: state.interestChoice,
 		project: state.projectChoice
 	}
+}
+
+// Redux method to dispatch vote status.
+const matchDispatchToProps = (dispatch) => {
+	return bindActionCreators({
+		setVoteState: interestSelected
+	}, dispatch)
 }
 
 // GraphQL to create multiple mutation on Interest and projects.
@@ -110,5 +133,6 @@ const CreateMutation = graphql(CREATE_COMBINATION_MUTATION, {
 })(VoteInterest)
 
 export default connect(
-	mapStateToProps
+	mapStateToProps,
+	matchDispatchToProps
 )(CreateMutation)
