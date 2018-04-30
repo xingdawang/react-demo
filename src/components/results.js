@@ -12,7 +12,9 @@ class Results extends Component {
 	render() {
 		if(this.props.allPostQuery.loading) {
 			return (
-				<h1>Loading</h1>
+				<div className="center-wrapper">
+					<h1>Loading</h1>
+				</div>
 			)
 		}
 
@@ -20,7 +22,9 @@ class Results extends Component {
 		const project = this.getProjectNumber()
 		return (
 			<div>
-				<h1>Results</h1>
+				<div className="center-wrapper">
+					<h1>Results</h1>
+				</div>
 				<Chart
 					chartType="PieChart"
 					data={[

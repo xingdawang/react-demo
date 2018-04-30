@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 // Material UI Component.
 import RaisedButton from 'material-ui/RaisedButton'
+import { List, ListItem } from 'material-ui/List'
+
+// Import React flexbox Grid
+import { Row, Col } from 'react-flexbox-grid'
 
 // import graphql.
 import { graphql } from 'react-apollo'
@@ -22,21 +26,31 @@ class VoteInterest extends Component {
 	render() {
 		return (
 			<div>
-				<h1> { this.props.interest.currentSurface } </h1>
+				<div className="center-wrapper">
+					<h1> { this.props.interest.currentSurface } </h1>
+				</div>
 				{ this.loadContent(this.props.interest.currentSurface) }
-				<RaisedButton
-					label="Vote"
-					primary={true}
-					disabled = {this.props.interest.votedStatus}
-					onClick={ () => this.voteInterest(this.props.interest.currentSurface) }
-				/>
-				<RaisedButton
-					label="Back"
-					secondary={true}
-					href='/'
-				/>
+				<Row around="md">
+					<Col md={6}>
+						<div className="interest-button-wrapper">
+							<RaisedButton
+								label="Vote"
+								primary={true}
+								disabled={this.props.interest.votedStatus}
+								className="vote-button"
+								onClick={ () => this.voteInterest(this.props.interest.currentSurface) }
+							/>
+							<RaisedButton
+								label="Back"
+								secondary={true}
+								className="back-button"
+								href='/'
+							/>
+						</div>
+					</Col>
+				</Row>
 				{this.props.interest.votedStatus ?
-					<div>
+					<div className="center-wrapper">
 						<h2>Fancy about others opinion?</h2>
 						<RaisedButton label="Results" primary={true} href='/results' />
 					</div>:
@@ -51,31 +65,52 @@ class VoteInterest extends Component {
 	loadContent = (choice) => {
 		if(choice === "theory") {
 			return (
-				<ul>
-					<li>GraphQL + </li>
-						<p>description description</p>
-						<p>description description</p>
-					<li>Redux</li>
-						<p>description description</p>
-						<p>description description</p>
-				</ul>
+				<div className="detail-content">
+					<List>
+						<ListItem
+							primaryText="GraphQL"
+							leftIcon={<img alt="graphql" src={require('../assets/icons/graphql.png')} />}
+							style={{"color": "#1fbcd3"}}
+						/>
+							<p>description description</p>
+							<p>description description</p>
+						<ListItem
+							primaryText="Redux"
+							leftIcon={<img alt="redux" src={require('../assets/icons/redux.png')} />}
+							style={{"color": "#1fbcd3"}}
+						/>
+							<p>description description</p>
+							<p>description description</p>
+					</List>
+				</div>
 			)
 		} else if(choice === "practice") {
 			return (
-				<div>
-					<ul>
-						<li>ES6 + </li>
+				<div className="detail-content">
+					<List>
+						<ListItem
+							primaryText="ES6"
+							leftIcon={<img alt="es6" src={require('../assets/icons/js.png')} />}
+							style={{"color": "#fc4482"}}
+						/>
 							<p>description description</p>
 							<p>description description</p>
-						<li>Gallery</li>
+						<ListItem
+							primaryText="Gallery"
+							leftIcon={<img alt="gallery" src={require('../assets/icons/gallery.png')} />}
+							style={{"color": "#fc4482"}}
+						/>
 							<p>description description</p>
 							<p>description description</p>
-						<li>Health Calculator</li>
+						<ListItem
+							primaryText="Health Calculator"
+							leftIcon={<img alt="health calculator" src={require('../assets/icons/health.png')} />}
+							style={{"color": "#fc4482"}}
+						/>
 							<p>description description</p>
 							<p>description description</p>
-					</ul>
+					</List>
 					<VoteProjects />
-					{console.log("props", this.props.project)}
 				</div>
 			)
 		}

@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 // Material UI Component.
 import RaisedButton from 'material-ui/RaisedButton'
 
+// Import React flexbox Grid
+import { Grid, Row, Col } from 'react-flexbox-grid'
+
 // Import redux.
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -20,20 +23,32 @@ class GiveFeedback extends Component {
 	render() {
 		if(this.props.currentChoice === null) {
 			return (
-				<div>
-					<TheoryIntroduction />
-					<RaisedButton
-						label="Theory"
-						primary={true}
-						onClick={ () => this.showSurface("theory") }
-					/>
-					<PracticeIntroduction />
-					<RaisedButton
-						label="Practice"
-						secondary={true}
-						onClick={ () => this.showSurface("practice") }
-					/>
-				</div>
+				<Grid>
+					<Row around="md">
+						<Col md={4}>
+							<TheoryIntroduction />
+							<div className="interest-button-wrapper">
+								<RaisedButton
+									label="Theory"
+									primary={true}
+									className="interest-button"
+									onClick={ () => this.showSurface("theory") }
+								/>
+							</div>
+						</Col>
+						<Col md={4}>
+							<PracticeIntroduction />
+							<div className="interest-button-wrapper">
+								<RaisedButton
+									label="Practice"
+									secondary={true}
+									className="interest-button"
+									onClick={ () => this.showSurface("practice") }
+								/>
+							</div>
+						</Col>
+					</Row>
+				</Grid>
 			)
 		} else {
 			return (

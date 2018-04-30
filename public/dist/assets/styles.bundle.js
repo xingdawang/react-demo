@@ -122,7 +122,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/* Introduction header */\n.center-wrapper {\n  text-align: center; }\n  .center-wrapper h1, .center-wrapper h2 {\n    text-transform: capitalize; }\n\n/* Introduction content */\n.intro-content {\n  padding: 0 15%; }\n\n/* Interest related button */\n.interest-button-wrapper {\n  width: 75%;\n  margin: 0 auto;\n  /* button for select interest*/\n  /* interest vote button */\n  /* back button sides the vote button */ }\n  .interest-button-wrapper .interest-button {\n    width: 100%; }\n  .interest-button-wrapper .vote-button {\n    width: 50%; }\n    .interest-button-wrapper .vote-button button {\n      bottom: -1px; }\n  .interest-button-wrapper .back-button {\n    width: 50%; }\n\n/* Interest detail content */\n.detail-content {\n  width: 75%;\n  margin: 0 auto; }\n", ""]);
 
 // exports
 

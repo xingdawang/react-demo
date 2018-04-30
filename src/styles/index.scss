@@ -1,0 +1,42 @@
+/* Introduction header */
+.center-wrapper {
+	text-align: center;
+	h1, h2 {
+		text-transform: capitalize;
+	}
+}
+
+/* Introduction content */
+.intro-content {
+	padding: 0 15%;
+}
+
+/* Interest related button */
+.interest-button-wrapper {
+		width: 75%;
+		margin: 0 auto;
+
+	/* button for select interest*/
+	.interest-button {
+		width: 100%;
+	}
+
+	/* interest vote button */
+	.vote-button {
+		width: 50%;
+		button {
+			bottom: -1px;
+		}
+	}
+
+	/* back button sides the vote button */
+	.back-button {
+		width: 50%;
+	}
+}
+
+/* Interest detail content */
+.detail-content {
+	width: 75%;
+	margin: 0 auto;
+}
