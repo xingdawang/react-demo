@@ -37,20 +37,28 @@ class PracticeDetails extends Component {
 					knowledge of math and styling.</p>
 					<GridList>
 						<Subheader>Childhood</Subheader>
-						<GridTile
-							key="gallery-1-project"
-							title="Gallery Project"
-							subtitle={<span><b>We all have a colorful childhood</b></span>}
-						>
-							<img alt="gallery project" src={require("../assets/images/gallery-1-project.png")} />
-						</GridTile>
-						<GridTile
-							key="gallery-2-project"
-							title="Gallery Project"
-							subtitle={<span><b>Each childhood has a vivid topic</b></span>}
-						>
-							<img alt="gallery project" src={require("../assets/images/gallery-2-project.png")} />
-						</GridTile>
+							<GridTile
+								key="gallery-1-project"
+								title="Gallery Project"
+								titlePosition="top"
+								rows={2}
+								cols={((window.innerWidth) < 800 ? 2 : 1)}
+								titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.4) 70%,rgba(0,0,0,0) 100%)"
+								subtitle={<span><b>We all have a colorful childhood</b></span>}
+							>
+								<img alt="gallery project" src={require("../assets/images/gallery-1-project.png")} />
+							</GridTile>
+							<GridTile
+								key="gallery-2-project"
+								title="Gallery Project"
+								titlePosition="top"
+								rows={2}
+								cols={((window.innerWidth) < 800 ? 2 : 1)}
+								titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.4) 70%,rgba(0,0,0,0) 100%)"
+								subtitle={<span><b>Each childhood has a vivid dream</b></span>}
+							>
+								<img alt="gallery project" src={require("../assets/images/gallery-2-project.png")} />
+							</GridTile>
 					</GridList>
 				<ListItem
 					primaryText="Health Calculator"
@@ -70,25 +78,37 @@ class PracticeDetails extends Component {
 					>
 						<Subheader>Health Calculator</Subheader>
 						<GridTile
-							key="gallery-1-project"
-							title="Gallery Project"
-							subtitle={<span><b>We all have a colorful childhood</b></span>}
+							key="health-calculator-2-project"
+							title="Health Calculator Project"
+							titlePosition="top"
+							rows={2}
+							cols={((window.innerWidth) < 800 ? 3 : 1)}
+							titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.4) 70%,rgba(0,0,0,0) 100%)"
+							subtitle={<span><b>Give some hint on your weight and when it's recorded</b></span>}
 						>
-							<img alt="health calculator project" src={require("../assets/images/gallery-1-project.png")} />
+							<img alt="health calculator project" src={require("../assets/images/health-calculator-1.png")} />
 						</GridTile>
 						<GridTile
-							key="gallery-2-project"
-							title="Gallery Project"
-							subtitle={<span><b>Each childhood has a vivid topic</b></span>}
+							key="health-calculator-1-project"
+							title="Health Calculator Project"
+							titlePosition="top"
+							rows={2}
+							cols={((window.innerWidth) < 800 ? 3 : 1)}
+							titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.4) 70%,rgba(0,0,0,0) 100%)"
+							subtitle={<span><b>Guide you with the most intuitive view on your health condition</b></span>}
 						>
-							<img alt="health calculator project" src={require("../assets/images/gallery-2-project.png")} />
+							<img alt="health calculator project" src={require("../assets/images/health-calculator-2.png")} />
 						</GridTile>
 						<GridTile
-							key="gallery-1-project"
-							title="Gallery Project"
-							subtitle={<span><b>We all have a colorful childhood</b></span>}
+							key="health-calculator-3-project"
+							title="Health Calculator Project"
+							titlePosition="top"
+							rows={2}
+							cols={((window.innerWidth) < 800 ? 3 : 1)}
+							titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.4) 70%,rgba(0,0,0,0) 100%)"
+							subtitle={<span><b>Help you to trace the health condition over time</b></span>}
 						>
-							<img alt="health calculator project" src={require("../assets/images/gallery-1-project.png")} />
+							<img alt="health calculator project" src={require("../assets/images/health-calculator-3.png")} />
 						</GridTile>
 					</GridList>
 			</List>
