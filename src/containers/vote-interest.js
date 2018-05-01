@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 // Material UI Component.
 import RaisedButton from 'material-ui/RaisedButton'
-import { List, ListItem } from 'material-ui/List'
 
 // Import React flexbox Grid
 import { Row, Col } from 'react-flexbox-grid'
@@ -20,6 +19,8 @@ import { interestSelected } from '../actions'
 
 // Import custom component.
 import VoteProjects from './vote-projects'
+import PracticeDetails from '../components/practice-details'
+import TheoryDetails from '../components/theory-details'
 
 class VoteInterest extends Component {
 
@@ -52,7 +53,7 @@ class VoteInterest extends Component {
 				{this.props.interest.votedStatus ?
 					<div className="center-wrapper">
 						<h2>Fancy about others opinion?</h2>
-						<RaisedButton label="Results" primary={true} href='/results' />
+						<RaisedButton label="Result" primary={true} href='/results' />
 					</div>:
 					""
 				}
@@ -66,50 +67,13 @@ class VoteInterest extends Component {
 		if(choice === "theory") {
 			return (
 				<div className="detail-content">
-					<List>
-						<ListItem
-							primaryText="GraphQL"
-							leftIcon={<img alt="graphql" src={require('../assets/icons/graphql.png')} />}
-							style={{"color": "#1fbcd3"}}
-						/>
-							<p>description description</p>
-							<p>description description</p>
-						<ListItem
-							primaryText="Redux"
-							leftIcon={<img alt="redux" src={require('../assets/icons/redux.png')} />}
-							style={{"color": "#1fbcd3"}}
-						/>
-							<p>description description</p>
-							<p>description description</p>
-					</List>
+					<TheoryDetails />
 				</div>
 			)
 		} else if(choice === "practice") {
 			return (
 				<div className="detail-content">
-					<List>
-						<ListItem
-							primaryText="ES6"
-							leftIcon={<img alt="es6" src={require('../assets/icons/js.png')} />}
-							style={{"color": "#fc4482"}}
-						/>
-							<p>description description</p>
-							<p>description description</p>
-						<ListItem
-							primaryText="Gallery"
-							leftIcon={<img alt="gallery" src={require('../assets/icons/gallery.png')} />}
-							style={{"color": "#fc4482"}}
-						/>
-							<p>description description</p>
-							<p>description description</p>
-						<ListItem
-							primaryText="Health Calculator"
-							leftIcon={<img alt="health calculator" src={require('../assets/icons/health.png')} />}
-							style={{"color": "#fc4482"}}
-						/>
-							<p>description description</p>
-							<p>description description</p>
-					</List>
+					<PracticeDetails />
 					<VoteProjects />
 				</div>
 			)

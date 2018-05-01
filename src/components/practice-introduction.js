@@ -29,7 +29,7 @@ class PracticeIntroduction extends Component {
 							leftIcon={<img alt="health calculator" src={require('../assets/icons/health.png')} />}
 							style={{"color": "#fc4482"}}
 						/>
-							<p>A medium seized sebsite what helps user to calculate Body Mass Index (BMI) and Body
+							<p>A medium seiz sebsite that helps user to calculate Body Mass Index (BMI) and Body
 							Fat Percentage (BFP).</p>
 							<p>The website will cover react, props & state, component lifecycle, Sass, and Google Charts.</p>
 					</List>
