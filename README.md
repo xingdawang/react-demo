@@ -12,8 +12,8 @@ react-presentation-feedback/
         actions/
         assets/
         components/
-      containers/
-      reducers/
+        containers/
+        reducers/
       styles/
     .babelrc
     .gitignore
@@ -33,7 +33,11 @@ As the purpose of this application is to get user preference, which is data orie
 
 * Thus the visual design locked using: [Material Design Design](https://material.io/guidelines/material-design/introduction.html#)
 * Usability focus, idea from [Don't make me think](https://www.amazon.com/Dont-Make-Me-Think-Usability/dp/0321344758)
+After carefully revision and refinment, the mobile design looks like:
 
+![Mobile Design](https://imgur.com/a/LOwjAlb)
+
+![Desktop Design](https://imgur.com/a/LOwjAlb)
 #### Implementation
 ##### Cloud Computing
 Platform as a Service (PaaS)
