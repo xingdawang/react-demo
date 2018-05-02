@@ -1,3 +1,25 @@
+
+## Table of Contents
+
+- [Purpose](#purpose)
+- [Folder Structure](#folder-structure)
+- [Design & Implementation](#design--implementation)
+  - [Design](#design)
+    - [Programming Paradigm](#programming-paradigm)
+    - [UI/UX Design](#uiux-design)
+    - [Mobile Design](#mobile-design)
+    - [Desktop Design](#desktop-design)
+  - [Implementation](#implementation)
+    - [Platform as a Service (Paas)](#platform-as-a-service--paas)
+    - [Styling]
+    - [Front-end]
+    - [Back-end]
+- [NPM Commands](#npm-commands)
+- [Package & Tool References](#package--tool-references)
+  - [Package](#package)
+  - [Tool](#tool)
+- [License](#license)
+ 
 ### Purpose
 This project is designed for the React presentation demo.
 
@@ -14,7 +36,7 @@ react-presentation-feedback/
         components/
         containers/
         reducers/
-      styles/
+        styles/
     .babelrc
     .gitignore
     package.json
@@ -33,14 +55,18 @@ As the purpose of this application is to get user preference, which is data orie
 
 * Thus the visual design locked using: [Material Design Design](https://material.io/guidelines/material-design/introduction.html#)
 * Usability focus, idea from [Don't make me think](https://www.amazon.com/Dont-Make-Me-Think-Usability/dp/0321344758)
-After carefully revision and refinment, the mobile design looks like:
 
-![Mobile Design](https://imgur.com/a/LOwjAlb)
-
-![Desktop Design](https://imgur.com/a/LOwjAlb)
+After carefully revision and refinment:
+##### Mobile Design
+![Mobile Design](https://i.imgur.com/mUMKM9E.jpg)
+##### Desktop Design
+![Destop Design](https://i.imgur.com/lQgiNPU.jpg)
 #### Implementation
-##### Cloud Computing
-Platform as a Service (PaaS)
+##### Platform as a Service (PaaS)
+> Platform as a Service (PaaS) or platform base service is a category of cloud computing services that provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app.
+
+As treating every sources including the platform as services, thus the implementation to achieve the function will naturally fails into the category as `Front-end` and `Back-end`, `Front-end` will be responsible mainly for rendering UI, which to be more frankly, how page looks like; and `Back-end` will be responsible for dealing with data manipulation, which can be easily considered as how data is processed.
+
 Frontend / Backend
 Frontend: React & Redux / Design pattern
 Backend: GraphCool
