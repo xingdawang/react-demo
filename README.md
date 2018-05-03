@@ -1,6 +1,3 @@
-
-
-
 ## Table of Contents
 
 - [Live Site Demo](#live-site-demo)
@@ -27,7 +24,7 @@
 Live Demo: [React Demo](https://xingdawang.github.io/react-demo) (https://xingdawang.github.io/react-demo)
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)  `Note`: Demo site is deployed using GitHub Pages, which may not perfectly solve the URL render situation. GitHub assume home url is "/react-demo", "/react-demo/results" may be rendered as "404 not found" by some browsers. If this is the case, try to use `Chrome Mac` / `Chrome Win` or `Chrome Android devices`.
-![desktop1](https://i.imgur.com/JCRjFOC.png)![Desktop](https://i.imgur.com/LT2K56P.png)![mobile1](https://i.imgur.com/Tv95gSQ.png)![mobile2](https://i.imgur.com/xChIoOM.png)
+![desktop1](https://i.imgur.com/JCRjFOC.png)![Desktop](https://i.imgur.com/LT2K56P.png)![mobile](https://i.imgur.com/g2tdES6.jpg)
  
 ### Purpose
 This project is designed for the React presentation demo.
